@@ -1,0 +1,14 @@
+{
+  "url" : "https://automationexercise.com/",
+  "driverSettings": {
+    "chrome":{
+      "chromeMode": "default"
+    },
+    "firefox": {
+      "firefoxMode": "default"
+    }
+  },
+  "timeouts": {
+    "timeoutExplicit": 15
+  }
+}
