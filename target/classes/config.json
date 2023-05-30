@@ -1,14 +1,20 @@
 {
+  "browserName" : "Chrome",
   "url" : "https://automationexercise.com/",
   "driverSettings": {
     "chrome":{
+      "driverName": "Chrome",
       "chromeMode": "default"
     },
     "firefox": {
+      "driverName": "Firefox",
       "firefoxMode": "default"
     }
   },
   "timeouts": {
-    "timeoutExplicit": 15
+    "timeoutExplicit": 20,
+    "timeoutCondition": 30,
+    "timeoutPollingInterval": 300,
+    "timeoutCommand": 60
   }
 }
