@@ -1,0 +1,22 @@
+{
+    "name": "Lukk_Automate",
+    "email": "a1qa.test.lm@gmail.com",
+    "title": "Mr",
+    "password": "lukk-Automate123",
+    "dateOfBirth": {
+      "day" : 16,
+      "month": "October",
+      "year": 1992
+    },
+    "firstName": "Malcolm",
+    "lastName": "Cash",
+    "company": "ABC Inc.",
+    "address":{
+      "street": "2419 Spyglass Rd",
+      "country": "United States",
+      "zipCode": "95467",
+      "city": "Hidden Valey Lake",
+      "state": "California"
+    },
+    "mobileNumber": "(707)350-0605"
+  }

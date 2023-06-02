@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import utils.DriverUtils;
 import utils.JsonFileReader;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class WebDriverFactory {
   private static WebDriver driver;
   private static JsonFileReader configReader = new JsonFileReader("src/main/resources/config.json");
@@ -23,14 +26,18 @@ public class WebDriverFactory {
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments(configReader.getValue("/driverSettings/firefox/firefoxMode"));
+                    firefoxOptions.addPreference("javascript.enabled", false);
                     driver = new FirefoxDriver(firefoxOptions);
                     break;
                 case "Chrome":
                 default:
                     Log.info("Instantiate Chrome driver.");
                     WebDriverManager.chromedriver().setup();
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.managed_default_content_settings.javascript", 2);
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments(configReader.getValue("/driverSettings/chrome/chromeMode"));
+                    chromeOptions.setExperimentalOption("prefs", prefs);
                     driver = new ChromeDriver(chromeOptions);
                     break;
             }
